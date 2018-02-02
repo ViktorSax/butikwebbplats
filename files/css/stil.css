@@ -1,0 +1,383 @@
+/* Uppdrag 2 CSS Webbutv. 2 */
+
+@font-face
+{
+font-family: Stay_Wildy;
+src: url("../fonts/StayWildy.ttf");
+}
+
+#wrapper{
+    max-width: 1980px; /* Denna max-width samt max-height finns främst för att hemsidan ska se "rätt" ut om någon som har en större upplösning på sin skärm väljer att titta på den */
+    max-height: 1080px;
+    margin: 0 auto;
+}
+
+header{
+    background: linear-gradient(to right, rgba(255,255,242,0.7), rgba(251,247,255,1));
+    margin: 0;
+	position: fixed;
+    left: 0;
+    right: 0;
+	width: 100%;
+	top: 0px;
+    padding: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+}
+
+#headercontent{
+    text-align: center;
+    margin:0px auto;
+    width: 60%;
+}
+
+@media screen and (max-width: 812px) { /* Denna @media-query och följande av samma typ är främst skapade för att göra hemsidan något brukbar på en telefon. 812px blev gränsen då det var den mest högupplösta skärmen i chromes dev tools */
+    #headercontent{ 
+        width: 100%;
+    }
+}
+
+.headercenter{
+    font-family: Stay_Wildy;
+	color: black;
+    font-size: 64px;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    padding: 0px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.headerleft{
+    font-family: 'Lato', sans-serif;
+    color: #1C1B1C;
+    font-size: 25px;
+    float: left;
+    font-weight: 100;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.headerright{
+    font-family: 'Lato', sans-serif;
+    color: #1C1B1C;
+    font-size: 25px;   
+    float: right;
+    font-weight: 100;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* Animation för underlines - samma kod har kopierats och klistras in separat vid två tillfällen istället för att markera genom > a, då jag inte ville ha samma animation för .headercenter */
+
+#headercontent > .headerleft{
+    text-decoration: none;
+    position: relative;
+    color: #000;
+}
+
+#headercontent > .headerleft:hover {
+    color: #000;
+  }
+
+#headercontent > .headerleft:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #7F7E82;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.15s ease-in-out 0s;
+    transition: all 0.15s ease-in-out 0s;
+}
+
+#headercontent > .headerleft:hover:before{
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); 
+}
+
+#headercontent > .headerright{
+    text-decoration: none;
+    position: relative;
+    color: #000;
+}
+
+#headercontent > .headerright:hover {
+    color: #000;
+  }
+
+#headercontent > .headerright:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #7F7E82;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.15s ease-in-out 0s;
+    transition: all 0.15s ease-in-out 0s;
+}
+
+#headercontent > .headerright:hover:before{
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); 
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#top{
+    width: 60%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 812px) {
+    #top{ 
+        width: 92%;
+    }
+}
+
+@media screen and (max-width: 812px) {
+    #sitecontent{ 
+        width: 100%;
+    }
+}
+
+h1{
+    font-family: 'Lato', sans-serif;
+    color: #5F5E61;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 150px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-decoration: none;
+    border-bottom: 1px solid #5F5E61;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 812px) {
+    h1{ 
+        font-size: 15px;
+    }
+}
+
+#top > img{
+    padding-top: 15px;
+    width: 1152px;
+    height: 500px;
+    object-fit: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#bottom{
+    width: 60%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 812px) {
+    #bottom{ 
+        width: 92%;
+        object-fit: none;
+    }
+}
+
+
+#pc2{
+    margin-top: 0.6%;
+    width: 32.5%;
+    height: 300px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-right: .9%;
+}
+
+@media screen and (max-width: 812px) {
+    #pc2{ 
+        margin: 0 auto;
+    }
+}
+
+
+#pc3{
+    margin-top: 0.6%;
+    width: 32.5%;
+    height: 300px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 0px;
+    margin-right: .9%;
+
+}
+
+@media screen and (max-width: 812px) {
+    #pc3{ 
+        margin: 0 auto;
+    }
+}
+
+
+#pc4{
+    margin-top: 0.6%;
+    width: 32.5%;
+    height: 300px;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+}
+
+
+#bottom > a:link { /* CSS-animationen som jag i HTML-kommentaren nämnde ej fungerar om jag använder float: left/right; */ 
+    opacity:1; 
+    filter:alpha(opacity=100); 
+    transition:.5s;
+}
+
+#bottom > a:hover{
+    opacity:0.8; 
+    filter:alpha(opacity=80); 
+    transition:.5s;
+}
+
+footer{
+    background: linear-gradient(#262526, #0D0C0D);
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    clear: both;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 200px;
+    border-style: solid;
+    border-color: #262526;
+}
+
+#footercontent{
+    margin: 0px auto;
+    width: 60%;
+    text-align: center;
+}
+
+h2{
+    font-family: Stay_Wildy;
+    color: white;
+    font-weight: 300; /* font-weight går egentligen inte att ändra för det här typsnittet, men avsaknaden av denna linje förstör fonten av någon anledning, vilket är varför jag lämnar den här */
+    font-size: 64px;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    padding: 5px;
+    padding-top: 10px;
+    display: inline-block;
+
+}
+
+.footerp{
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 25px;
+    font-weight: 300;
+    border-bottom: 1px solid #5F5E61;
+    padding-bottom: 10px;
+
+}
+
+@media screen and (max-width: 812px) {
+    .footerp{ 
+        font-size: 15px;
+    }
+}
+
+.uppsala{
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.uppsala2{
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+h3{
+    font-family: 'Lato', sans-serif;
+    color: #5F5E61;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 812px) {
+    h3{ 
+        font-size: 15px;
+    }
+}
+
+#form{
+    display: block;
+    text-align: center;
+    width: 60%;
+}
+
+form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: -66.5%;
+    text-align: center;
+}
+
+.form_text{
+    font-family: 'Lato', sans-serif;
+    color: #5F5E61;
+}
+
+legend{
+    font-family: 'Lato', sans-serif;
+    color: #5F5E61;
+    margin: 0 auto;
+}
+
+fieldset{
+    margin: 0 auto;
+}
+
+.print{
+    font-family: 'Lato', sans-serif;
+}
+
+@media print{
+    body{ background-color:#FFFFFF; background-image:none; color:#000000 }
+    #headercontent{ width:100%; }
+    #top{ width:100%; }
+    #bottom{ width:100%; }
+    img{ display:none; }
+    .headerleft{ display:none; }
+    .headerright{ display:none; }
+}

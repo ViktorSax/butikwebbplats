@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <title>Butik</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="files/css/normalize.css"> <!-- CSS-reset -->
+    <link rel="stylesheet" href="files/css/stil.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function validateForm() {
+          // Under så samlas och hämtas alla värden från det som skrivs in i formuläret
+          var namn = document.getElementById("Fornamn").value;
+          var enamn = document.getElementById("Efternamn").value;
+          var email = document.getElementById("Email").value;
+          var adress = document.getElementById("Adress").value;
+          var personnummer = document.getElementById("Personnummer").value;
+          var telefonnummer = document.getElementById("Telefonnummer").value;
+
+          // Här så använder vi reguljära uttryck för att på ett någorlunda bra vis (helt vattentäta är de inte) se till att användaren skriver in rätt information.
+          var emailCheck = /^(?!\.)(\w|-|\.){1,64}(?!\.)@(?!\.)[-.a-zåäö0-9]{4,253}$/;
+          var adressCheck = /^[A-ZÅÄÖa-zåäö0-9'\.\-\s\,]/;
+          var pnummerCheck = /^[0-9]{6}-[0-9]{4}$/;
+          var telefonCheck = /^[0-9]{9}/; // {9} här är något överflödig, då jag kollar av samma sak senare med telefonnummer.length == 9
+
+          // Här så samlar vi alla if-statements, om alla stämmer så ger vi funktionen ett "true"-värde, som triggar action="tack.html" och skickar oss vidare till en ny hemsida.
+          // Om ingen stämmer, så ger vi funktionen ett "false"-värde som är sammanknutet till en alert("") som agerar som felmeddelande
+          // Denna linje här under ser till att inget värde(fält i formuläret) är tomt. Om det är tomt, så skickas ett felmeddelande.
+          if (namn != '' && enamn != '' && email != '' && adress != '' && personnummer != '' && telefonnummer != '') {
+          // Följande fyra linjer ser till att värdet hämtat högst upp matchar med de reguljära uttrycken ovanför.
+          if (email.match(emailCheck)) {
+          if (adress.match(adressCheck)) {
+          if (personnummer.match(pnummerCheck)) {
+          if (telefonnummer.match(telefonCheck)) { 
+          // Denna linje ser till att någon utav cirklarna för könen är checkade.
+          if (document.getElementById("male").checked || document.getElementById("female").checked || document.getElementById("other").checked) {
+          // Och här är den linjen som gör telefonCheck = regex något överflödig, då den i princip sett gör samma sak som {9} - dvs kollar att numret är 9 siffror långt.
+          if (telefonnummer.length == 9 ) { 
+          return true;
+        } else {
+            alert("Ditt telefonnummer bör ha 9 siffror i sig.");
+          return false;  
+        }      
+        } else {
+            alert("Du måste välja ett kön.");
+          return false;  
+        }        
+        } else {
+            alert("Du har skrivit in ett inkorrekt telefonnummer, du får endast använda siffror och numret bör vara 9 siffror långt.");
+          return false; 
+        }          
+        } else {
+            alert("Du har skrivit in ett inkorrekt personnummer.");
+          return false;  
+        }         
+        } else {
+            alert("Din adress stämmer inte.");
+          return false;
+        } 
+        } else {
+            alert("Din email stämmer inte.");
+          return false;
+        } 
+        } else {
+            alert("Du måste fylla i alla fält.");
+          return false;  
+        }
+        }  
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+       <header>
+       <div id="headercontent">
+         <a class="headercenter" href="index.html">Butik</a>
+         <a class="headerleft" href="faq.html">Om oss</a>
+         <a class="headerright" href="nyhetsbrev.html">Nyhetsbrev</a>
+       </div>
+       </header>
+       <div id="sitecontent"> <!-- Syftar på allt innehåll på hemsidan utöver bannern högst upp samt footern längst ner-->
+         <div id="top"> <!-- Något missvisande namn, då det syftar på "topp-delen" av hemside-innehållet, istället för högst upp på hela webbplatsen-->
+           <h1>Datorer • Tillbehör • Mjukvara</h1>
+         </div>
+         <div id="bottom">
+         </div>
+         <div id="atext">
+           <h3>För att ta del av våra erbjudanden, skriv gärna upp er till vårat nyhetsbrev!</h3>
+         </div>
+         <div id="form">
+           <form name="form1" action="tack.html" method="post" onsubmit="return validateForm()">
+              <fieldset>
+                  <legend>Personlig Information</legend>
+                  <p class="form_text">
+                  <input type="radio" name="gender" id="male" value="man"> Man<br>
+                  <input type="radio" name="gender" id="female" value="kvinna"> Kvinna<br>
+                  <input type="radio" name="gender" id ="other" value="övrigt"> Övrigt 
+                  <p class="form_text">
+                  <input type="text" name="Förnamn" id="Fornamn" placeholder="Förnamn">
+                  </p>
+                  <p class="form_text">
+                  <input type="text" name="Efternamn" id="Efternamn" placeholder="Efternamn">
+                  </p>
+                  <p class="form_text">
+                  <input type="text" name="Email" id="Email" placeholder="Email">
+                  </p>
+                  <p class="form_text">
+                  <input type="text" name="Adress" id="Adress" placeholder="Adress">
+                  </p>
+                  <p class="form_text">
+                  <input type="text" name="Personnummer" id="Personnummer" placeholder="Personnummer (10-siffrigt)">
+                  </p>
+                  <p class="form_text">
+                  <input type="text" name="Telefonnummer" id="Telefonnummer" placeholder="Hemtelefon">
+                  </p>
+                  <p class="form_text">
+                  <input type="submit" value="Sänd">
+                  </p>
+              </fieldset> 
+              </form>  
+         </div>
+       </div>
+        <footer>
+          <div id="footercontent">
+             <h2>Butik</h2>
+             <p class="footerp">Datorer • Tillbehör • Mjukvara</p>
+             <p class="uppsala">UPPSALA</p>
+             <p class="uppsala2">018-78 78 78 <br>Apelgatan 99 <br>755 55</p>
+             <a class="print" href="#" onclick="javascript:window.print()">Skriv ut</a> 
+          </div>
+        </footer>
+    </div>
+     
+
+    
+  </body>
+</html>

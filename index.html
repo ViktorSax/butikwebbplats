@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <title>Butik</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="files/css/normalize.css"> <!-- CSS-reset -->
+    <link rel="stylesheet" href="files/css/stil.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+<!-- Kvar att göra -
+  * Kundvagnsfunktion?
+  * Formulär för nyhetsbrev
+  * HTML samt CSS-kod för alternativa sidor där text ska presenteras istället för bilder
+  * Javascript 
+  * Möjligen lösa problemet med responsiv design (framsidan hanterar inte bilder rätt vid upplösningar under 1980x1080) margin: 0 auto; löser tämligen problemet, men radar inte upp bilderna
+    på ett symmetriskt vis med den större top-bilden. Användning av floats gör att mina animeringar vid hover över bilderna går sönder. Padding tar bort border-radius där bilderna 
+    krockar "osynligt". -->
+  <body>
+    <div id="wrapper">
+       <header>
+       <div id="headercontent">
+         <a class="headercenter" href="index.html">Butik</a>
+         <a class="headerleft" href="faq.html">Om oss</a>
+         <a class="headerright" href="nyhetsbrev.html">Nyhetsbrev</a>
+       </div>
+       </header>
+       <div id="sitecontent"> <!-- Syftar på allt innehåll på hemsidan utöver bannern högst upp samt footern längst ner-->
+         <div id="top"> <!-- Något missvisande namn, då det syftar på "topp-delen" av hemside-innehållet, istället för högst upp på hela webbplatsen-->
+           <h1>Datorer • Tillbehör • Mjukvara</h1>
+           <img src="files/images/pc104.jpg" alt="Peripherals on desk">
+         </div>
+         <div id="bottom">
+           <a href="produktA.html">
+           <img id="pc2" src="files/images/pc202.jpg" alt="Keyboard with a cup of coffee"></a>
+           <a href="produktB.html">
+           <img id="pc3" src="files/images/pc301.jpg" alt="Phone taking picture landscape"></a>
+           <a href="produktC.html">
+           <img id="pc4" src="files/images/pc4.jpg" alt="Phone taking picture profile"></a>
+         </div>
+        </div>
+        <footer>
+          <div id="footercontent">
+             <h2>Butik</h2>
+             <p class="footerp">Datorer • Tillbehör • Mjukvara</p>
+             <p class="uppsala">UPPSALA</p>
+             <p class="uppsala2">018-78 78 78 <br>Apelgatan 99 <br>755 55</p>
+             <a class="print" href="#" onclick="javascript:window.print()">Skriv ut</a> 
+          </div>
+        </footer>
+    </div>
+     
+
+    
+  </body>
+</html>
