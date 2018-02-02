@@ -146,8 +146,37 @@ img{
     box-sizing: border-box;
 }
 
+#topB{
+    width: 60%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.centered {
+    font-family: Stay_Wildy;
+    color: white;
+    font-size: 90px;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+    padding-top: 15px;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid #5F5E61;
+    padding-bottom: 10px;
+
+}
+
 @media screen and (max-width: 812px) {
     #top{ 
+        width: 92%;
+    }
+}
+
+@media screen and (max-width: 812px) {
+    #topB{ 
         width: 92%;
     }
 }
@@ -183,6 +212,15 @@ h1{
     padding-top: 15px;
     width: 1152px;
     height: 500px;
+    object-fit: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#topB > img{
+    padding-top: 15px;
+    width: 1152px;
+    height: 300px;
     object-fit: none;
     box-sizing: border-box;
     border-radius: 5px;
@@ -380,4 +418,38 @@ fieldset{
     img{ display:none; }
     .headerleft{ display:none; }
     .headerright{ display:none; }
+}
+
+#producttext{
+    font-family: 'Lato', sans-serif;
+    color: #5F5E61;
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+@media screen and (max-width: 812px) {
+    #producttext{ 
+        width: 92%;
+    }
+}
+
+#omoss{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.omosstext{
+    font-family: 'Lato', sans-serif;
+    color: #5F5E61;
+    width: 100%;
+    text-align: center;
+
+
+}
+
+@media screen and (max-width: 812px) {
+    .omosstext{ 
+        width: 92%;
+    }
 }
